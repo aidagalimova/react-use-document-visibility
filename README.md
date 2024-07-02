@@ -53,7 +53,6 @@ npm link
 
 ```
 npm link <путь до библиотеки>/node_modules/react <путь до библиотеки>/node_modules/react-dom <путь до библиотеки>
-npm link react-use-document-visibility
 ```
 
 Например, в моем случае:
