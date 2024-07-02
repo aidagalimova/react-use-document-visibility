@@ -50,8 +50,8 @@ export const useDocumentVisibility = () => {
 
   const handleVisibilityChange = () => {
     const isVisible = document.visibilityState === "visible";
+    if (!isVisible && visible) setCount((prev) => prev + 1);
     setVisible(isVisible);
-    if (!isVisible) setCount((prev) => prev + 1);
   };
 
   const onVisibilityChange = (isVisibleFunc: (isVisible: boolean) => void) => {
