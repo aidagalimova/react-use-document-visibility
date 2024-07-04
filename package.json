@@ -12,6 +12,8 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/react": "^18.3.3",
     "rollup": "^2.79.1",
     "rollup-plugin-typescript2": "^0.36.0",
