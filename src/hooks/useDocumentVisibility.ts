@@ -35,10 +35,10 @@ import { useEffect, useState } from "react";
  *    };
  */
 
+const isDocumentVisible = (): boolean => !document.hidden;
+
 export const useDocumentVisibility = () => {
-  const [visible, setVisible] = useState(
-    document.visibilityState === "visible"
-  );
+  const [visible, setVisible] = useState(isDocumentVisible);
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -49,14 +49,14 @@ export const useDocumentVisibility = () => {
   }, []);
 
   const handleVisibilityChange = () => {
-    const isVisible = document.visibilityState === "visible";
+    const isVisible = isDocumentVisible();
     if (!isVisible && visible) setCount((prev) => prev + 1);
     setVisible(isVisible);
   };
 
   const onVisibilityChange = (isVisibleFunc: (isVisible: boolean) => void) => {
     const userIsVisibleFunc = () => {
-      isVisibleFunc(document.visibilityState === "visible");
+      isVisibleFunc(isDocumentVisible());
     };
     document.addEventListener("visibilitychange", userIsVisibleFunc);
     return () =>
