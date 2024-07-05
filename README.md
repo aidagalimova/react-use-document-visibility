@@ -39,30 +39,3 @@ const LeaveTabCounter = () => {
 };
 ```
 
-### Локальное использование библиотеки
-
-В папке с бибилиотекой запускаем команды:
-
-```
-npm i
-npm run build
-npm link
-```
-
-В папке с проектом, в который хотим импортировать библиотеку, запускаем команды:
-
-```
-npm link <путь до библиотеки>/node_modules/react <путь до библиотеки>/node_modules/react-dom <путь до библиотеки>
-```
-
-Например, в моем случае:
-
-```
-npm link C:\Users\1\Documents\GitHub\react-use-document-visibility\node_modules\react C:\Users\1\Documents\GitHub\react-use-document-visibility\node_modules\react-dom  C:\Users\1\Documents\GitHub\react-use-document-visibility
-```
-
-Импортируем библиотеку в нужный файл, в проекте:
-
-```
-import {useDocumentVisibility} from 'react-use-document-visibility'
-```
